@@ -55,7 +55,7 @@ def calculate_skin_score(
                 lifestyle_score -= 5
 
         if lifestyle.stress_level is not None:
-            if lifestyle.stress_level >= 7:
+            if lifestyle.stress_level >= 3:
                 lifestyle_score -= 5
 
         if lifestyle.sun_exposure_hours is not None:

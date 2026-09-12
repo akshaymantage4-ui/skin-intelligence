@@ -6,10 +6,7 @@ from sqlalchemy.orm import Session
 
 from database import SessionLocal
 from models.user import User
-
-
-SECRET_KEY = "skin-intelligence-secret-key"
-ALGORITHM = "HS256"
+from config import SECRET_KEY, ALGORITHM
 
 oauth2_scheme = OAuth2PasswordBearer(
     tokenUrl="/auth/login"

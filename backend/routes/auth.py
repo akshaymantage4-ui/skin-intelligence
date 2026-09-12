@@ -7,6 +7,7 @@ from schemas.user import UserCreate
 from passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import datetime, timedelta, UTC
+from config import SECRET_KEY, ALGORITHM
 
 router = APIRouter()
 
@@ -16,9 +17,6 @@ pwd_context = CryptContext(
     schemes=["bcrypt"],
     deprecated="auto"
 )
-
-SECRET_KEY = "skin-intelligence-secret-key"
-ALGORITHM = "HS256"
 
 
 def get_db():

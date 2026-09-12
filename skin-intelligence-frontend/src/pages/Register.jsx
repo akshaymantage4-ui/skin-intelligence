@@ -7,6 +7,7 @@ export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("user");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
@@ -28,6 +29,7 @@ export default function Register() {
             name,
             email,
             password,
+            role,
           }),
         }
       );
@@ -79,6 +81,15 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
+          <select
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="user">User</option>
+            <option value="consultant">Skincare Consultant</option>
+            <option value="dermatologist">Dermatologist</option>
+          </select>
 
           <button type="submit">
             Register

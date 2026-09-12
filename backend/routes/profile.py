@@ -8,12 +8,10 @@ from schemas.user_profile import UserProfileCreate, UserProfileResponse
 
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt
+from config import SECRET_KEY, ALGORITHM
 
 
 router = APIRouter()
-
-SECRET_KEY = "skin-intelligence-secret-key"
-ALGORITHM = "HS256"
 
 oauth2_scheme = OAuth2PasswordBearer(
     tokenUrl="/auth/login"

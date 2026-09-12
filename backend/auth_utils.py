@@ -1,8 +1,6 @@
 from jose import jwt,JWTError
 from fastapi import HTTPException,status
-
-SECRET_KEY='skin-intelligence-secret-key'
-ALGORITHM='HS256'
+from config import SECRET_KEY, ALGORITHM
 
 def verify_token(token:str):
     try:

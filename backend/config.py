@@ -1,4 +1,6 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # JWT — single source of truth. Override via env var in production.
 SECRET_KEY = os.getenv("JWT_SECRET_KEY", "skin-intelligence-secret-key")

@@ -19,6 +19,12 @@ from models.sleep_log import SleepLog
 from routes.skin_assessment import router as skin_assessment_router
 from routes.skincare_routine import router as skincare_routine_router
 from models.skin_score_history import SkinScoreHistory
+from models.product import Product
+from routes.product import router as products_router
+
+from routes.product_recommendation import (
+    router as product_recommendations_router
+)
 app = FastAPI(
     title="Skin Intelligence API",
     description="AI-powered personalized skincare platform",
@@ -111,4 +117,15 @@ app.include_router(
     skincare_routine_router,
     prefix="/user",
     tags=["Skincare Routine"]
+)
+
+app.include_router(
+    product_recommendations_router,
+    prefix="/user",
+    tags=["Product Recommendations"]
+)
+app.include_router(
+    products_router,
+    prefix="/admin",
+    tags=["Products"]
 )

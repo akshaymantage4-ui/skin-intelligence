@@ -1,0 +1,20 @@
+import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AppShell from "../components/AppShell";
+
+const API = "http://127.0.0.1:8000";
+
+export default function Dashboard() {
+  const navigate = useNavigate();
+  const [data, setData] = useState({ user: null, score: null, profile: null, lifestyle: null, assessment: null, routine: null });
+  const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    const headers = { Authorization: `Bearer ${token}` };
+    const get = async path => { const response = await fetch(`${API}${path}`, { headers }); return response.ok ? response.json() : null; };
+    Promise.all([get("/auth/me"), get("/user/skin-score"), get("/user/skin-profile"), get("/user/lifestyle-profile"), get("/user/skin-assessment"), get("/user/skincare-routine")]).then(([user, score, profile, lifestyle, assessment, routine]) => setData({ user, score, profile, lifestyle, assessment, routine })).finally(() => setLoading(false));
+  }, [token]);
+  const next = useMemo(() => !data.profile ? ["Set up your skin profile", "Add your skin type and baseline concerns first.", "/skin-profile"] : !data.lifestyle ? ["Add lifestyle details", "Sleep, hydration, stress, and sun exposure improve your guidance.", "/lifestyle"] : !data.assessment ? ["Complete your skin assessment", "Identify and prioritize your current concerns.", "/skin-assessment"] : !data.routine ? ["Generate your routine", "Turn your assessment into morning and evening steps.", "/routine"] : ["Keep your plan current", "Log sleep and revisit your assessment when your skin changes.", "/sleep"], [data]);
+  const setup = [["Skin profile", data.profile, "/skin-profile"], ["Lifestyle", data.lifestyle, "/lifestyle"], ["Assessment", data.assessment, "/skin-assessment"], ["Routine", data.routine, "/routine"]];
+  return <AppShell title={`Welcome${data.user?.name ? `, ${data.user.name}` : ""}`} subtitle="Build a consistent plan from your skin, lifestyle, and daily habits.">{loading ? <div className="card">Loading your skincare workspace…</div> : <><section className="hero-card"><div><p className="eyebrow">Recommended next step</p><h2>{next[0]}</h2><p>{next[1]}</p></div><button className="btn" onClick={() => navigate(next[2])}>Continue</button></section><section className="metric-grid">{data.score ? <article className="metric-card score"><span>Skin health score</span><strong>{data.score.total_score}<small>/100</small></strong><p>Condition {data.score.skin_condition_score}/35 · Lifestyle {data.score.lifestyle_score}/20 · Sleep {data.score.sleep_score}/15</p></article> : <article className="metric-card"><span>Skin health score</span><strong>—</strong><p>Available after your assessment.</p></article>}<article className="metric-card"><span>Plan progress</span><strong>{setup.filter(([, complete]) => complete).length}<small>/4</small></strong><p>Complete the core steps to unlock your routine.</p></article></section><section className="section-heading"><div><p className="eyebrow">Setup checklist</p><h2>Your personalized workflow</h2></div></section><div className="workflow-grid">{setup.map(([label, complete, path], index) => <article className="workflow-card" key={label}><span className={`step-badge${complete ? " complete" : ""}`}>{complete ? "Done" : `Step ${index + 1}`}</span><h3>{label}</h3><p>{complete ? "Your information is saved and can be updated anytime." : "Complete this step to make your recommendations more relevant."}</p><button className="secondary-btn" onClick={() => navigate(path)}>{complete ? "Review" : "Start"}</button></article>)}</div>{data.routine && <section className="card routine-preview"><p className="eyebrow">Today’s plan</p><h2>Morning routine</h2><ol>{data.routine.morning_routine.split("\n").filter(Boolean).slice(0, 3).map((step, i) => <li key={i}>{step}</li>)}</ol><button className="secondary-btn" onClick={() => navigate("/routine")}>View full routine</button></section>}</>}</AppShell>;
+}

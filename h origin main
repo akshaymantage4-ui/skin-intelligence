@@ -1,0 +1,34 @@
+[1mdiff --git a/backend/main.py b/backend/main.py[m
+[1mindex 3e69a06..9cf1ed1 100644[m
+[1m--- a/backend/main.py[m
+[1m+++ b/backend/main.py[m
+[36m@@ -19,6 +19,12 @@[m [mfrom models.sleep_log import SleepLog[m
+ from routes.skin_assessment import router as skin_assessment_router[m
+ from routes.skincare_routine import router as skincare_routine_router[m
+ from models.skin_score_history import SkinScoreHistory[m
+[32m+[m[32mfrom models.product import Product[m
+[32m+[m[32mfrom routes.product import router as products_router[m
+[32m+[m
+[32m+[m[32mfrom routes.product_recommendation import ([m
+[32m+[m[32m    router as product_recommendations_router[m
+[32m+[m[32m)[m
+ app = FastAPI([m
+     title="Skin Intelligence API",[m
+     description="AI-powered personalized skincare platform",[m
+[36m@@ -111,4 +117,15 @@[m [mapp.include_router([m
+     skincare_routine_router,[m
+     prefix="/user",[m
+     tags=["Skincare Routine"][m
+[32m+[m[32m)[m
+[32m+[m
+[32m+[m[32mapp.include_router([m
+[32m+[m[32m    product_recommendations_router,[m
+[32m+[m[32m    prefix="/user",[m
+[32m+[m[32m    tags=["Product Recommendations"][m
+[32m+[m[32m)[m
+[32m+[m[32mapp.include_router([m
+[32m+[m[32m    products_router,[m
+[32m+[m[32m    prefix="/admin",[m
+[32m+[m[32m    tags=["Products"][m
+ )[m
+\ No newline at end of file[m

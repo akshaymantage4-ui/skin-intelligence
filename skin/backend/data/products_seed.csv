@@ -1,0 +1,13 @@
+name,brand,category,price,skin_types,concerns,key_ingredients,description
+Gentle Barrier Cleanser,DermaCare,Face Wash,349,"normal,dry,sensitive,combination","dryness,sensitivity","Ceramide NP,Panthenol,Glycerin","Low-foam cleanser designed for a simple barrier-focused routine."
+Clear Balance Cleanser,DermaCare,Face Wash,299,"oily,combination","acne,oily","Salicylic Acid,Niacinamide","BHA-focused cleanser for users targeting oil and blemish concerns."
+Hydra Repair Moisturizer,DermaCare,Moisturizer,499,"dry,normal,sensitive","dryness,sensitivity","Ceramide NP,Hyaluronic Acid,Squalane","Barrier-support moisturizer with humectants and emollients."
+Oil Control Gel Moisturizer,DermaCare,Moisturizer,429,"oily,combination","acne,oily","Niacinamide,Hyaluronic Acid","Lightweight gel moisturizer for oily and combination skin."
+Daily Shield SPF 50,SunSafe,Sunscreen,599,"all","pigmentation,sensitivity,photoaging","Zinc Oxide,Niacinamide","Broad-spectrum sunscreen recommendation for daily daytime use."
+Vitamin C Bright Serum,BrightLab,Serum,699,"normal,oily,combination","pigmentation,dullness","Vitamin C,Panthenol","Antioxidant serum for users prioritizing uneven tone."
+Niacinamide Balance Serum,BrightLab,Serum,549,"oily,combination,sensitive","acne,pigmentation,oily","Niacinamide,Zinc Oxide","Simple niacinamide-led serum for oil and blemish-focused routines."
+Azelaic Calm Treatment,BrightLab,Treatment,799,"normal,oily,combination,sensitive","acne,pigmentation,redness","Azelaic Acid,Panthenol","Gentle treatment option for multiple concern categories."
+Hydra HA Serum,HydraLab,Serum,649,"dry,normal,sensitive","dryness","Hyaluronic Acid,Panthenol","Hydration-focused serum."
+Retinol Night Serum,RenewLab,Treatment,899,"normal,oily,combination","fine_lines,photoaging","Retinol,Squalane","Retinoid-focused night treatment; reference caution applies."
+Soothing Recovery Mask,CalmLab,Face Masks,449,"dry,sensitive,normal","dryness,sensitivity","Panthenol,Ceramide NP","Weekly soothing mask for a simplified routine."
+BHA Clarifying Treatment,ClearLab,Treatment,599,"oily,combination","acne,oily","Salicylic Acid","BHA treatment for users prioritizing congestion and oil."

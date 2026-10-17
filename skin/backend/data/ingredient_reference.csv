@@ -1,0 +1,31 @@
+inci_name,display_name,function,fa_trigger,comedogenic,fragrance,eu_allergen,pregnancy_caution
+Retinol,Retinol,Retinoid,0,0,0,0,1
+Retinal,Retinal,Retinoid,0,0,0,0,1
+Tretinoin,Tretinoin,Retinoid,0,0,0,0,1
+Niacinamide,Niacinamide,Vitamin B3,0,0,0,0,0
+Ascorbic Acid,Vitamin C,Antioxidant,0,0,0,0,0
+Sodium Ascorbyl Phosphate,SAP Vitamin C,Antioxidant,0,0,0,0,0
+Hyaluronic Acid,Hyaluronic Acid,Humectant,0,0,0,0,0
+Sodium Hyaluronate,Sodium Hyaluronate,Humectant,0,0,0,0,0
+Salicylic Acid,Salicylic Acid,BHA exfoliant,0,0,0,0,0
+Glycolic Acid,Glycolic Acid,AHA exfoliant,0,0,0,0,0
+Lactic Acid,Lactic Acid,AHA exfoliant,0,0,0,0,0
+Mandelic Acid,Mandelic Acid,AHA exfoliant,0,0,0,0,0
+Azelaic Acid,Azelaic Acid,Acid treatment,0,0,0,0,0
+Ceramide NP,Ceramide NP,Barrier support,0,0,0,0,0
+Ceramide AP,Ceramide AP,Barrier support,0,0,0,0,0
+Ceramide EOP,Ceramide EOP,Barrier support,0,0,0,0,0
+Panthenol,Panthenol,Humectant/soothing,0,0,0,0,0
+Glycerin,Glycerin,Humectant,0,0,0,0,0
+Squalane,Squalane,Emollient,0,1,0,0,0
+Peptide,Peptides,Conditioning,0,0,0,0,0
+Copper Peptide,Copper Peptide,Peptide,0,0,0,0,0
+Zinc Oxide,Zinc Oxide,UV filter,0,0,0,0,0
+Titanium Dioxide,Titanium Dioxide,UV filter,0,0,0,0,0
+Fragrance,Fragrance,Fragrance,0,0,1,1,0
+Limonene,Limonene,Fragrance allergen,0,0,1,1,0
+Linalool,Linalool,Fragrance allergen,0,0,1,1,0
+Citronellol,Citronellol,Fragrance allergen,0,0,1,1,0
+Alcohol Denat,Alcohol Denat,Solvent,0,0,0,0,0
+Benzoyl Peroxide,Benzoyl Peroxide,Acne treatment,0,0,0,0,0
+Tea Tree Oil,Tea Tree Oil,Antimicrobial,1,0,0,0,0

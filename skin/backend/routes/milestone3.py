@@ -277,21 +277,21 @@ def get_skincare_routine(
     return routine
 
 
-@router.get("/progress")
-def get_progress(
-    db: Session = Depends(get_db),
-    current_user=Depends(get_current_user)
-):
-    user_id = _user_id(current_user)
+# @router.get("/progress")
+# def get_progress(
+#     db: Session = Depends(get_db),
+#     current_user=Depends(get_current_user)
+# ):
+#     user_id = _user_id(current_user)
 
-    records = (
-        db.query(ProgressLog)
-        .filter(ProgressLog.user_id == user_id)
-        .order_by(ProgressLog.created_at.desc())
-        .all()
-    )
+#     records = (
+#         db.query(ProgressLog)
+#         .filter(ProgressLog.user_id == user_id)
+#         .order_by(ProgressLog.created_at.desc())
+#         .all()
+#     )
 
-    return records
+#     return records
 
 
 @router.get("/skin-score/history")

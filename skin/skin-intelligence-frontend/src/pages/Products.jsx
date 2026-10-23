@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-const API = "http://127.0.0.1:8000";
+const API = "/api";
 export default function Products() {
   const [form, setForm] = useState({ category: "", budget: "", goal: "", limit: 5 });
   const [data, setData] = useState(null); const [catalog, setCatalog] = useState([]); const [selected, setSelected] = useState([]); const [comparison, setComparison] = useState(null); const [loading, setLoading] = useState(false); const [message, setMessage] = useState("");

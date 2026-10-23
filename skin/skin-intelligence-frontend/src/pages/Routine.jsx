@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://127.0.0.1:8000";
+const API = "/api";
 const Section = ({ title, value }) => <section className="routine-item"><h2>{title}</h2><ol>{(value || "").split("\n").filter(Boolean).map((step, i) => <li key={i}>{step}</li>)}</ol></section>;
 
 export default function Routine() {

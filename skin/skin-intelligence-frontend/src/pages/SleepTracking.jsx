@@ -24,7 +24,7 @@ function SleepTracking() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/user/sleep",
+        "/api/user/sleep",
         {
           method: "GET",
           headers: {
@@ -77,7 +77,7 @@ function SleepTracking() {
       setMessage("");
 
       const response = await fetch(
-        "http://127.0.0.1:8000/user/sleep",
+        "/api/user/sleep",
         {
           method: "POST",
           headers: {

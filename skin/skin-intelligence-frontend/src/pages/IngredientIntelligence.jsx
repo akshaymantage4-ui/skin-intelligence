@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API = "http://127.0.0.1:8000";
+const API = "/api";
 
 export default function IngredientIntelligence() {
   const [text, setText] = useState("Niacinamide, Hyaluronic Acid, Retinol");

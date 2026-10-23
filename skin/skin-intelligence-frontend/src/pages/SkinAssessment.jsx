@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://127.0.0.1:8000";
+const API = "/api";
 const levels = ["low", "medium", "high"];
 const List = ({ title, items }) => items?.length ? <section><h3>{title}</h3><ul>{items.map((item, i) => <li key={i}>{item}</li>)}</ul></section> : null;
 
